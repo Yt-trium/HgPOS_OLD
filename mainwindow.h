@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "database.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +19,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    DataBase db;
 };
 
 #endif // MAINWINDOW_H
