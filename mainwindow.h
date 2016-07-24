@@ -17,9 +17,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void setDataBase(DataBase *d);
+
 private:
     Ui::MainWindow *ui;
-    DataBase db;
+    DataBase *db;
 };
 
 #endif // MAINWINDOW_H
