@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 
 #include "database.h"
 
@@ -22,6 +23,7 @@ public:
 private:
     Ui::MainWindow *ui;
     DataBase *db;
+    QList<Produit> *listProduits;
 };
 
 #endif // MAINWINDOW_H

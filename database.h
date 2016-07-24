@@ -10,14 +10,19 @@
 
 #include <QDebug>
 
+#include "produit.h"
+
 class DataBase
 {
 public:
     DataBase();
+
     int connect(QString hostName, QString dbName, QString userName, QString password);
-    void close();
     bool connect_dialog();
+    void close();
+
     bool checkTableProduitsNotEmpty();
+    QList<Produit>* loadProduits();
 
 private:
     QSqlDatabase db;

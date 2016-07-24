@@ -17,6 +17,7 @@ SOURCES += main.cpp\
     database.cpp
 
 HEADERS  += mainwindow.h \
-    database.h
+    database.h \
+    produit.h
 
 FORMS    += mainwindow.ui

@@ -72,10 +72,28 @@ bool DataBase::checkTableProduitsNotEmpty()
     QString q = "SELECT * FROM produits";
     QSqlQuery query(q);
 
-    while (query.next())
+    return query.isActive();
+}
+
+QList<Produit>* DataBase::loadProduits()
+{
+    QList<Produit> *listProduits = new QList<Produit>();
+
+    Produit p;
+    QString q = "SELECT * FROM produits";
+    QSqlQuery query(q);
+
+    while(query.next())
     {
-        qDebug() << query.value(1).toString();
+        p.idProduit = query.value(0).toInt();
+        p.nom       = query.value(1).toString();
+        p.type      = query.value(2).toInt();
+        p.prix      = query.value(3).toFloat();
+        p.img       = query.value(4).toString();
+
+        listProduits->append(p);
     }
 
-    return true;
+
+    return listProduits;
 }
