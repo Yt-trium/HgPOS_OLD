@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QtWidgets>
 
 #include "database.h"
 
@@ -20,10 +21,14 @@ public:
 
     void setDataBase(DataBase *d);
 
+public slots:
+    void on_btn_vente_clicked(QString idProduit);
+
 private:
     Ui::MainWindow *ui;
     DataBase *db;
     QList<Produit> *listProduits;
+    QList<QPushButton*> *listBtn;
 };
 
 #endif // MAINWINDOW_H
