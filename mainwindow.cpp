@@ -17,9 +17,13 @@ MainWindow::MainWindow(QWidget *parent) :
         QPushButton *tmpBtn = new QPushButton(this);
         tmpBtn->setText(listProduits->at(i).nom);
         listBtn->append(tmpBtn);
-        connect(tmpBtn, SIGNAL(clicked()), this, SLOT(on_btn_vente_clicked(listBtn->at(i)->text());));
+
+        connect(tmpBtn, SIGNAL(clicked()), &mapper, SLOT(map()));
+        mapper.setMapping(tmpBtn, listProduits->at(i).idProduit);
+
         ui->gridBtnVente->addWidget(tmpBtn,i/4,i%4);
     }
+    connect(&mapper, SIGNAL(mapped(int)), this, SLOT(venteBtn_clicked(int)));
 }
 
 MainWindow::~MainWindow()
@@ -33,7 +37,7 @@ void MainWindow::setDataBase(DataBase *d)
     db = d;
 }
 
-void MainWindow::on_btn_vente_clicked(QString idProduit)
+void MainWindow::venteBtn_clicked(int idProduit)
 {
     qDebug() << idProduit;
 }

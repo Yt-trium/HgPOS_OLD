@@ -22,13 +22,14 @@ public:
     void setDataBase(DataBase *d);
 
 public slots:
-    void on_btn_vente_clicked(QString idProduit);
+    void venteBtn_clicked(int idProduit);
 
 private:
     Ui::MainWindow *ui;
     DataBase *db;
     QList<Produit> *listProduits;
     QList<QPushButton*> *listBtn;
+    QSignalMapper mapper;
 };
 
 #endif // MAINWINDOW_H
