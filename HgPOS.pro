@@ -21,3 +21,6 @@ HEADERS  += mainwindow.h \
     produit.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    README.md

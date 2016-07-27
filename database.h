@@ -23,6 +23,7 @@ public:
 
     bool checkTableProduitsNotEmpty();
     QList<Produit>* loadProduits();
+    bool sellProduit(int id, int unit);
 
 private:
     QSqlDatabase db;

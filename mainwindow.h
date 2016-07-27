@@ -20,9 +20,11 @@ public:
     ~MainWindow();
 
     void setDataBase(DataBase *d);
+    void update_tableWidgetVente();
 
-public slots:
+private slots:
     void venteBtn_clicked(int idProduit);
+    void on_pushButtonValider_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -30,6 +32,8 @@ private:
     QList<Produit> *listProduits;
     QList<QPushButton*> *listBtn;
     QSignalMapper mapper;
+    QList<Produit> *panier;
+    QList<int> *panierUnite;
 };
 
 #endif // MAINWINDOW_H

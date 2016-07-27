@@ -97,3 +97,16 @@ QList<Produit>* DataBase::loadProduits()
 
     return listProduits;
 }
+
+bool DataBase::sellProduit(int id, int unit)
+{
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::sellProduit : Can't open database";
+        return false;
+    }
+
+    QString q = "INSERT INTO `vente` (`idVente`, `idProduit`, `date`, `unite`) VALUES (NULL, '" + QString::number(id) + "', CURRENT_TIMESTAMP, '" + QString::number(unit) + "');";
+    QSqlQuery query(q);
+    return true;
+}

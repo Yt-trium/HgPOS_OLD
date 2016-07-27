@@ -6,18 +6,22 @@ Hg POS est un logiciel de gestion d'un point de vente associatif.
 Hg POS permet de gérer la vente, les stocks, les inscriptions...
 
 ###  TODO
-- Création de la BDD de gestion de vente.
-- Création du logiciel Client basique pour la vente.
+- Amélioration BDD
+- Client : Ajout Colonne boutton en fonction du type.
+- Supprimer les incohérence de langage dans le source (Anglais/Français, il faut choisir ...)
 
 ### DONE
 - Création du README
+- Création de la BDD de gestion de vente.
+- Création du logiciel Client basique pour la vente.
+
 
 
 
 
 
 ## VERSION AND REVISION
-### VERSION ACTUEL : ALPHA 0
+### VERSION ACTUEL : ALPHA 1
 
 
 
