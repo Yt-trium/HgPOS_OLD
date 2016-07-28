@@ -7,13 +7,14 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 
 ###  TODO
 - Amélioration BDD
-- Client : Ajout Colonne boutton en fonction du type.
 - Supprimer les incohérence de langage dans le source (Anglais/Français, il faut choisir ...)
+- Accès Admin / Trez / Prez
 
 ### DONE
 - Création du README
 - Création de la BDD de gestion de vente.
 - Création du logiciel Client basique pour la vente.
+- Client : Ajout Colonne boutton en fonction du type.
 
 
 

@@ -15,12 +15,36 @@ MainWindow::MainWindow(QWidget *parent) :
     {
         QPushButton *tmpBtn = new QPushButton(this);
         tmpBtn->setText(listProduits->at(i).nom);
+
+        if(listProduits->at(i).img != "")
+        {
+            tmpBtn->setIcon(QIcon("./logoProduits/" + listProduits->at(i).img));
+            tmpBtn->setIconSize(QSize(50,50));
+        }
+
         listBtn->append(tmpBtn);
 
         connect(tmpBtn, SIGNAL(clicked()), &mapper, SLOT(map()));
         mapper.setMapping(tmpBtn, listProduits->at(i).idProduit);
 
-        ui->gridBtnVente->addWidget(tmpBtn,i/4,i%4);
+        // RIRI
+        switch(listProduits->at(i).type)
+        {
+            case 1:     // SNACK
+            ui->verticalLayoutVente_1->addWidget(tmpBtn);
+            break;
+            case 2:     // BOISSON
+            ui->verticalLayoutVente_2->addWidget(tmpBtn);
+            break;
+            case 254:   // HIDE
+            // NOTHING
+            break;
+            default:
+            ui->verticalLayoutVente_3->addWidget(tmpBtn);
+            break;
+        }
+
+        // ui->gridBtnVente->addWidget(tmpBtn,i/4,i%4);
     }
     connect(&mapper, SIGNAL(mapped(int)), this, SLOT(venteBtn_clicked(int)));
 
@@ -73,12 +97,32 @@ void MainWindow::update_listWidgetVente()
 void MainWindow::on_pushButtonValider_clicked()
 {
     // Total et Monnaie.
-
+    /*
+    QMessageBox::StandardButton reply;
+      reply = QMessageBox::question(this, "Test", "Quit?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes) {
+        qDebug() << "Yes was clicked";
+      } else {
+        qDebug() << "Yes was *not* clicked";
+      }*/
     int i = 0;
-
+    float total = 0;
     for(i=0;i<panier->size();i++)
+        total+=panier->at(i).prix*panierUnite->at(i);
+
+    // TODO CHECK RETURN
+    bool validReturn;
+    float esp;
+
+    if(QMessageBox::question(this,"Total",QString("Total : " + QString::number(total) + "€\nValider ?"),QMessageBox::Yes|QMessageBox::No)  == QMessageBox::Yes)
     {
-        db->sellProduit(panier->at(i).idProduit,panierUnite->at(i));
+        for(i=0;i<panier->size();i++)
+        {
+            db->sellProduit(panier->at(i).idProduit,panierUnite->at(i));
+        }
+        esp = QInputDialog::getDouble(this,"Espèces","Espèces :",total,0,5000,2,&validReturn);
+        QMessageBox::information(this,"Rendu",QString("Rendu : " + QString::number(esp - total)));
     }
 
     panier->clear();
@@ -114,5 +158,14 @@ void MainWindow::on_pushButtonSupprimer_clicked()
 {
     panier->removeAt(ui->listWidgetVente->currentRow());
     panierUnite->removeAt(ui->listWidgetVente->currentRow());
+    update_listWidgetVente();
+}
+
+void MainWindow::on_listWidgetVente_itemDoubleClicked()
+{
+    // TODO CLEAN
+    bool validReturn;
+    int u = QInputDialog::getInt(this,"Unite","Unite :",1,0,1000,1,&validReturn);
+    panierUnite->replace(ui->listWidgetVente->currentRow(),u);
     update_listWidgetVente();
 }

@@ -24,3 +24,8 @@ FORMS    += mainwindow.ui
 
 DISTFILES += \
     README.md
+
+RESOURCES += \
+    rsrc.qrc
+
+RC_FILE = hg.rc

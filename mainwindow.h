@@ -30,6 +30,8 @@ private slots:
     void on_pushButtonAnnuler_clicked();
     void on_pushButtonSupprimer_clicked();
 
+    void on_listWidgetVente_itemDoubleClicked();
+
 private:
     Ui::MainWindow *ui;
     DataBase *db;
