@@ -85,3 +85,34 @@ void MainWindow::on_pushButtonValider_clicked()
     panierUnite->clear();
     ui->listWidgetVente->clear();
 }
+
+void MainWindow::on_pushButtonQuantite_clicked()
+{
+    bool validReturn;
+    int u = QInputDialog::getInt(this,"Unite","Unite :",1,0,1000,1,&validReturn);
+    panierUnite->replace(ui->listWidgetVente->currentRow(),u);
+    /*
+    Produit tmp = panier->at(ui->listWidgetVente->currentRow());
+
+    panier->removeAt(ui->listWidgetVente->currentRow());
+    panierUnite->removeAt(ui->listWidgetVente->currentRow());
+
+    panier->append(tmp);
+    panierUnite->append(u);
+    */
+    update_listWidgetVente();
+}
+
+void MainWindow::on_pushButtonAnnuler_clicked()
+{
+    panier->clear();
+    panierUnite->clear();
+    ui->listWidgetVente->clear();
+}
+
+void MainWindow::on_pushButtonSupprimer_clicked()
+{
+    panier->removeAt(ui->listWidgetVente->currentRow());
+    panierUnite->removeAt(ui->listWidgetVente->currentRow());
+    update_listWidgetVente();
+}

@@ -37,7 +37,7 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 
 ### Database Structure
 - "produits" : la liste des articles en vente (idProduit, nom, type, prix, img(link))
-types : (snacks = 1, boissons = 2, sandwichs = 100, inscriptions = 200, remise = 250, default = 255)
+types : (snacks = 1, boissons = 2, sandwichs = 100, inscriptions = 200, remise = 250, hide = 254, default = 255)
 
 > Une formule, c'est < snack + boisson + sandwichs + remise >.
 
@@ -59,7 +59,7 @@ On calcul la différence de stock lorsque l'ont fait la caisse afin de donner la
 
 totalTheorie = total vente + total erreur stock.
 
-SELECT SUM(prix) FROM produits INNER JOIN vente ON vente.idProduit = produits.idProduit
-WHERE  date >= (SELECT date FROM caisse LIMIT 1)
+SELECT SUM(prix * unite) FROM produits INNER JOIN vente ON vente.idProduit = produits.idProduit
+WHERE  date >= (SELECT date FROM caisse ORDER BY idCaisse DESC LIMIT 1)
 
 INSERT INTO `caisse` (`idCaisse`, `date`, `totalTheorie`, `totalReel`) VALUES (NULL, CURRENT_TIMESTAMP, '4.5', '5');

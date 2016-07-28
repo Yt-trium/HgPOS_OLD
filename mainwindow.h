@@ -24,7 +24,11 @@ public:
 
 private slots:
     void venteBtn_clicked(int idProduit);
+
     void on_pushButtonValider_clicked();
+    void on_pushButtonQuantite_clicked();
+    void on_pushButtonAnnuler_clicked();
+    void on_pushButtonSupprimer_clicked();
 
 private:
     Ui::MainWindow *ui;

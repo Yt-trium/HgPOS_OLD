@@ -100,6 +100,7 @@ QList<Produit>* DataBase::loadProduits()
 
 bool DataBase::sellProduit(int id, int unit)
 {
+    QSqlDatabase db(QSqlDatabase::database());
     if(!db.open())
     {
         qDebug()<<"DataBase::sellProduit : Can't open database";
