@@ -19,7 +19,6 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 
 
 
-
 ## VERSION AND REVISION
 ### VERSION ACTUEL : ALPHA 1
 

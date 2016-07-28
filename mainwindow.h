@@ -20,7 +20,7 @@ public:
     ~MainWindow();
 
     void setDataBase(DataBase *d);
-    void update_tableWidgetVente();
+    void update_listWidgetVente();
 
 private slots:
     void venteBtn_clicked(int idProduit);

@@ -6,7 +6,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->tableWidgetVente->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     listProduits = db->loadProduits();
     listBtn = new QList<QPushButton*>;
@@ -54,26 +53,20 @@ void MainWindow::venteBtn_clicked(int idProduit)
     else
         return;
     // TODO : Ajout Propre
-    update_tableWidgetVente();
+    update_listWidgetVente();
 }
 
-void MainWindow::update_tableWidgetVente()
+void MainWindow::update_listWidgetVente()
 {
-    ui->tableWidgetVente->clearContents();
-    ui->tableWidgetVente->setRowCount(0);
+    ui->listWidgetVente->clear();
 
     int i = 0;
-    QTableWidgetItem *tmpItm;
     for(i=0;i<panier->size();i++)
     {
-        ui->tableWidgetVente->insertRow(0);
-        tmpItm = new QTableWidgetItem(panier->at(i).nom);
-        ui->tableWidgetVente->setItem(0,0,tmpItm);
-        tmpItm = new QTableWidgetItem(QString::number(panier->at(i).prix));
-        ui->tableWidgetVente->setItem(0,1,tmpItm);
-        tmpItm = new QTableWidgetItem(QString::number(panierUnite->at(i)));
-        ui->tableWidgetVente->setItem(0,2,tmpItm);
-        // TODO : Fuite mémoire ?
+        QListWidgetItem* itm = new QListWidgetItem(panier->at(i).nom + "\t - \t" + QString::number(panier->at(i).prix) + "€\t - \t"  + QString::number(panierUnite->at(i)) + "µ");
+        itm->setTextAlignment(Qt::AlignRight);
+        ui->listWidgetVente->addItem(itm);
+        // ui->listWidgetVente->addItem(panier->at(i).nom + "\t - \t" + QString::number(panier->at(i).prix) + "€\t - \t"  + QString::number(panierUnite->at(i)) + "µ");
     }
 }
 
@@ -90,6 +83,5 @@ void MainWindow::on_pushButtonValider_clicked()
 
     panier->clear();
     panierUnite->clear();
-    ui->tableWidgetVente->clearContents();
-    ui->tableWidgetVente->setRowCount(0);
+    ui->listWidgetVente->clear();
 }
