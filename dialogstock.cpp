@@ -18,7 +18,7 @@ DialogStock::DialogStock(QWidget *parent) :
     // TODO : Changer la structure de donné pour stock.
     stock = db->loadStock();
     ventes = db->loadVente();
-    QList<int>* diff = new QList<int>();
+    diff = new QList<int>();
     int i;
 
     for(i=0;i<listProduits->size();i++)
@@ -31,6 +31,7 @@ DialogStock::DialogStock(QWidget *parent) :
     }
 
     // GUI
+    listSpin = new QList<QSpinBox*>;
 
     for(i=0;i<listProduits->size();i++)
     {
@@ -47,6 +48,7 @@ DialogStock::DialogStock(QWidget *parent) :
         ui->gridLayoutStock->addWidget(tmpLbl3,i+1,2);
         ui->gridLayoutStock->addWidget(tmpLbl4,i+1,3);
         ui->gridLayoutStock->addWidget(tmpSpin,i+1,4);
+        listSpin->append(tmpSpin);
     }
 }
 
@@ -62,7 +64,19 @@ void DialogStock::setDataBase(DataBase *d)
 
 void DialogStock::on_buttonBox_accepted()
 {
-    // TODO : Calcul différence final
-    QMessageBox::information(this,"Diff","Différence : " + QString::number(0) + "€");
-    // TODO : UPDATE STOCK
+    int i;
+    float diffPrix = 0;
+
+    for(i=0;i<listProduits->size();i++)
+    {
+        // Différence = Somme ( ( Realité - Théorique ) * Prix )
+        diffPrix += (listSpin->at(i)->value() - (stock->at(i) + diff->at(i))) * listProduits->at(i).prix;
+    }
+
+    QMessageBox::information(this,"Diff","Différence : " + QString::number(diffPrix) + "€");
+
+    for(i=0;i<listSpin->size();i++)
+        db->setStock(listProduits->at(i).idProduit,listSpin->at(i)->value());
+
+    QMessageBox::information(this,"Information","! DATABASE UPDATE !");
 }

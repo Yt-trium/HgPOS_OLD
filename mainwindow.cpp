@@ -180,9 +180,11 @@ void MainWindow::on_actionAccesPresident_triggered()
     qDebug() << "on_actionAccesPresident_triggered";
 }
 
-void MainWindow::on_actionAccesTresorier_triggered()
+void MainWindow::on_actionAccesCaisse_triggered()
 {
-    qDebug() << "on_actionAccesTresorier_triggered";
+    qDebug() << "on_actionAccesCaisse_triggered";
+    DialogCaisse d;
+    d.exec();
 }
 
 void MainWindow::on_actionAccesStock_triggered()

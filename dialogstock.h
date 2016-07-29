@@ -22,9 +22,11 @@ public:
 private:
     Ui::DialogStock *ui;
     DataBase *db;
+    QList<QSpinBox*> *listSpin;
     QList<Produit> *listProduits;
     QList<int> *stock;
     QList<Ventes> *ventes;
+    QList<int>* diff;
 
 public slots:
     void on_buttonBox_accepted();

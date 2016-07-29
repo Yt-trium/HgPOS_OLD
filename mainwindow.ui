@@ -110,7 +110,7 @@
     </property>
     <addaction name="actionAccesAdmin"/>
     <addaction name="actionAccesPresident"/>
-    <addaction name="actionAccesTresorier"/>
+    <addaction name="actionAccesCaisse"/>
     <addaction name="actionAccesStock"/>
    </widget>
    <addaction name="menuFichier"/>
@@ -140,9 +140,9 @@
     <string>President</string>
    </property>
   </action>
-  <action name="actionAccesTresorier">
+  <action name="actionAccesCaisse">
    <property name="text">
-    <string>Tresorier</string>
+    <string>Caisse</string>
    </property>
   </action>
   <action name="actionAccesStock">

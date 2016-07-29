@@ -170,3 +170,19 @@ QList<Ventes>* DataBase::loadVente()
 
     return ventes;
 }
+
+void DataBase::setStock(int id, int q)
+{
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::loadVente : Can't open database";
+        return;
+    }
+
+    QString qs;
+
+    qs = "UPDATE `stock` SET `quantite` = '" +  QString::number(q) + "' WHERE `stock`.`idProduit` = " + QString::number(id) + ";";
+    QSqlQuery query(qs);
+
+}

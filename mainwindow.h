@@ -6,6 +6,7 @@
 #include <QtWidgets>
 
 #include "dialogstock.h"
+#include "dialogcaisse.h"
 
 #include "database.h"
 
@@ -38,7 +39,7 @@ private slots:
 
     void on_actionAccesAdmin_triggered();
     void on_actionAccesPresident_triggered();
-    void on_actionAccesTresorier_triggered();
+    void on_actionAccesCaisse_triggered();
     void on_actionAccesStock_triggered();
 
 private:

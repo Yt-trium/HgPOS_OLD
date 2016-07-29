@@ -28,6 +28,8 @@ public:
     QList<int>* loadStock();
     QList<Ventes>* loadVente();
 
+    void setStock(int id, int q);
+
 private:
     QSqlDatabase db;
 };
