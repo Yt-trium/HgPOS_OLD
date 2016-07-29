@@ -20,7 +20,8 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     database.h \
     produit.h \
-    dialogstock.h
+    dialogstock.h \
+    struct.h
 
 FORMS    += mainwindow.ui \
     dialogstock.ui

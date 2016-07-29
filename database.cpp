@@ -77,6 +77,13 @@ bool DataBase::checkTableProduitsNotEmpty()
 
 QList<Produit>* DataBase::loadProduits()
 {
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::loadProduits : Can't open database";
+        return false;
+    }
+
     QList<Produit> *listProduits = new QList<Produit>();
 
     Produit p;
@@ -110,4 +117,56 @@ bool DataBase::sellProduit(int id, int unit)
     QString q = "INSERT INTO `vente` (`idVente`, `idProduit`, `date`, `unite`) VALUES (NULL, '" + QString::number(id) + "', CURRENT_TIMESTAMP, '" + QString::number(unit) + "');";
     QSqlQuery query(q);
     return true;
+}
+
+QList<int>* DataBase::loadStock()
+{
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::loadStock : Can't open database";
+        return false;
+    }
+
+    QList<int> *stock = new QList<int>();
+
+    int x;
+    QString q = "SELECT * FROM stock";
+    QSqlQuery query(q);
+
+    while(query.next())
+    {
+        x = query.value(1).toInt();
+
+        stock->append(x);
+    }
+
+    return stock;
+}
+
+QList<Ventes>* DataBase::loadVente()
+{
+
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::loadVente : Can't open database";
+        return false;
+    }
+
+    QList<Ventes> *ventes = new QList<Ventes>();
+
+    Ventes v;
+    QString q = "SELECT idProduit, unite FROM vente WHERE  date >= (SELECT date FROM caisse ORDER BY idCaisse DESC LIMIT 1)";
+    QSqlQuery query(q);
+
+    while(query.next())
+    {
+        v.idProduit = query.value(0).toInt();
+        v.unite = query.value(1).toInt();
+
+        ventes->append(v);
+    }
+
+    return ventes;
 }

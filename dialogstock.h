@@ -2,6 +2,7 @@
 #define DIALOGSTOCK_H
 
 #include <QDialog>
+#include <QtWidgets>
 
 #include "database.h"
 
@@ -21,6 +22,14 @@ public:
 private:
     Ui::DialogStock *ui;
     DataBase *db;
+    QList<Produit> *listProduits;
+    QList<int> *stock;
+    QList<Ventes> *ventes;
+
+public slots:
+    void on_buttonBox_accepted();
+
+
 };
 
 #endif // DIALOGSTOCK_H

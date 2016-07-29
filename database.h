@@ -11,6 +11,7 @@
 #include <QDebug>
 
 #include "produit.h"
+#include "struct.h"
 
 class DataBase
 {
@@ -24,6 +25,8 @@ public:
     bool checkTableProduitsNotEmpty();
     QList<Produit>* loadProduits();
     bool sellProduit(int id, int unit);
+    QList<int>* loadStock();
+    QList<Ventes>* loadVente();
 
 private:
     QSqlDatabase db;
