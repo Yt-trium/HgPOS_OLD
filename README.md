@@ -53,7 +53,6 @@ WHERE 	date >= '2016-07-22 01:24:28'
 AND 	date <= '2016-07-22 01:24:30';
 
 - "stock" : la liste des stocks theorique (idProduit, quantite).
-> TODO TRIGGER AVEC VENTE
 On calcul la différence de stock lorsque l'ont fait la caisse afin de donner la différence pour le total théorique, ce qui met a jours la table.
 
 - "caisse" : la liste des caisses faites par le trésorier. (idCaisse, date, totalTheorie, totalReel)

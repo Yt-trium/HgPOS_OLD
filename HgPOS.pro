@@ -14,13 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    database.cpp
+    database.cpp \
+    dialogstock.cpp
 
 HEADERS  += mainwindow.h \
     database.h \
-    produit.h
+    produit.h \
+    dialogstock.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialogstock.ui
 
 DISTFILES += \
     README.md

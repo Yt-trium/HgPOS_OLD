@@ -5,6 +5,8 @@
 #include <QMessageBox>
 #include <QtWidgets>
 
+#include "dialogstock.h"
+
 #include "database.h"
 
 namespace Ui {
@@ -22,6 +24,8 @@ public:
     void setDataBase(DataBase *d);
     void update_listWidgetVente();
 
+public slots:
+
 private slots:
     void venteBtn_clicked(int idProduit);
 
@@ -31,6 +35,11 @@ private slots:
     void on_pushButtonSupprimer_clicked();
 
     void on_listWidgetVente_itemDoubleClicked();
+
+    void on_actionAccesAdmin_triggered();
+    void on_actionAccesPresident_triggered();
+    void on_actionAccesTresorier_triggered();
+    void on_actionAccesStock_triggered();
 
 private:
     Ui::MainWindow *ui;

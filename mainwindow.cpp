@@ -169,3 +169,26 @@ void MainWindow::on_listWidgetVente_itemDoubleClicked()
     panierUnite->replace(ui->listWidgetVente->currentRow(),u);
     update_listWidgetVente();
 }
+
+void MainWindow::on_actionAccesAdmin_triggered()
+{
+    qDebug() << "on_actionAccesAdmin_triggered";
+}
+
+void MainWindow::on_actionAccesPresident_triggered()
+{
+    qDebug() << "on_actionAccesPresident_triggered";
+}
+
+void MainWindow::on_actionAccesTresorier_triggered()
+{
+    qDebug() << "on_actionAccesTresorier_triggered";
+}
+
+void MainWindow::on_actionAccesStock_triggered()
+{
+    qDebug() << "on_actionAccesStock_triggered";
+    DialogStock d;
+    d.setDataBase(db);
+    d.exec();
+}

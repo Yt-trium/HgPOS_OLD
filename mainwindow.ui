@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>HgPOS - Alpha 0.1 - Cyril Meyer</string>
   </property>
   <property name="windowIcon">
    <iconset resource="rsrc.qrc">
@@ -99,6 +99,22 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAcc_s_Restreint">
+    <property name="title">
+     <string>Accès Restreint</string>
+    </property>
+    <addaction name="actionAccesAdmin"/>
+    <addaction name="actionAccesPresident"/>
+    <addaction name="actionAccesTresorier"/>
+    <addaction name="actionAccesStock"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuAcc_s_Restreint"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -109,6 +125,31 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAdministrateur">
+   <property name="text">
+    <string>Administrateur</string>
+   </property>
+  </action>
+  <action name="actionAccesAdmin">
+   <property name="text">
+    <string>Administrateur</string>
+   </property>
+  </action>
+  <action name="actionAccesPresident">
+   <property name="text">
+    <string>President</string>
+   </property>
+  </action>
+  <action name="actionAccesTresorier">
+   <property name="text">
+    <string>Tresorier</string>
+   </property>
+  </action>
+  <action name="actionAccesStock">
+   <property name="text">
+    <string>Stock</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
