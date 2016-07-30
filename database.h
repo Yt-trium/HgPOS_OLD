@@ -29,6 +29,7 @@ public:
     QList<Ventes>* loadVente();
 
     void setStock(int id, int q);
+    void setCaisse(float theorie, float reel);
 
 private:
     QSqlDatabase db;

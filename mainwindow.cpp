@@ -184,6 +184,7 @@ void MainWindow::on_actionAccesCaisse_triggered()
 {
     qDebug() << "on_actionAccesCaisse_triggered";
     DialogCaisse d;
+    d.setDataBase(db);
     d.exec();
 }
 

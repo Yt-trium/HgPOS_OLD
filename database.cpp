@@ -186,3 +186,17 @@ void DataBase::setStock(int id, int q)
     QSqlQuery query(qs);
 
 }
+
+void DataBase::setCaisse(float theorie, float reel)
+{
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::loadVente : Can't open database";
+        return;
+    }
+
+    QString q;
+    q = "INSERT INTO `caisse` (`idCaisse`, `date`, `totalTheorie`, `totalReel`) VALUES (NULL, CURRENT_TIMESTAMP, '" + QString::number(theorie) + "', '" + QString::number(reel) + "');";
+    QSqlQuery query(q);
+}

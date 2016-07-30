@@ -2,6 +2,10 @@
 #define DIALOGCAISSE_H
 
 #include <QDialog>
+#include <QInputDialog>
+#include <QMessageBox>
+
+#include "database.h"
 
 namespace Ui {
 class DialogCaisse;
@@ -13,10 +17,22 @@ class DialogCaisse : public QDialog
 
 public:
     explicit DialogCaisse(QWidget *parent = 0);
+    void setDataBase(DataBase *d);
     ~DialogCaisse();
 
 private:
     Ui::DialogCaisse *ui;
+    DataBase *db;
+    float fdc;
+    float totalVentes;
+    float theorique;
+    QList<Produit> *listProduits;
+    QList<Ventes> *ventes;
+    float getTotalReel();
+
+private slots:
+    void updateTotalReel();
+    void on_pushButtonValiderCaisse_clicked();
 };
 
 #endif // DIALOGCAISSE_H
