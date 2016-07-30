@@ -37,10 +37,9 @@ private slots:
 
     void on_listWidgetVente_itemDoubleClicked();
 
-    void on_actionAccesAdmin_triggered();
-    void on_actionAccesPresident_triggered();
     void on_actionAccesCaisse_triggered();
     void on_actionAccesStock_triggered();
+    void on_actionA_propos_triggered();
 
 private:
     Ui::MainWindow *ui;

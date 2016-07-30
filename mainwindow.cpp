@@ -170,15 +170,7 @@ void MainWindow::on_listWidgetVente_itemDoubleClicked()
     update_listWidgetVente();
 }
 
-void MainWindow::on_actionAccesAdmin_triggered()
-{
-    qDebug() << "on_actionAccesAdmin_triggered";
-}
-
-void MainWindow::on_actionAccesPresident_triggered()
-{
-    qDebug() << "on_actionAccesPresident_triggered";
-}
+// TODO : VERIFICATION DECOMPTE POUR ACCES RESTREINT
 
 void MainWindow::on_actionAccesCaisse_triggered()
 {
@@ -194,4 +186,10 @@ void MainWindow::on_actionAccesStock_triggered()
     DialogStock d;
     d.setDataBase(db);
     d.exec();
+}
+
+void MainWindow::on_actionA_propos_triggered()
+{
+    qDebug() << "on_actionA_propos_triggered";
+    QMessageBox::about(this,"HgPOS","HgPOS\nMeyer Cyril\ncyril@adem.u-strasbg.fr");
 }

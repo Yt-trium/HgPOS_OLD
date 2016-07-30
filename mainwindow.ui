@@ -108,12 +108,25 @@
     <property name="title">
      <string>Accès Restreint</string>
     </property>
-    <addaction name="actionAccesAdmin"/>
-    <addaction name="actionAccesPresident"/>
     <addaction name="actionAccesCaisse"/>
     <addaction name="actionAccesStock"/>
    </widget>
+   <widget class="QMenu" name="menuAide">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="actionA_propos"/>
+   </widget>
+   <widget class="QMenu" name="menuMembres">
+    <property name="title">
+     <string>Membres</string>
+    </property>
+    <addaction name="actionAjouter"/>
+    <addaction name="actionRecherche"/>
+   </widget>
    <addaction name="menuFichier"/>
+   <addaction name="menuMembres"/>
+   <addaction name="menuAide"/>
    <addaction name="menuAcc_s_Restreint"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -151,6 +164,24 @@
   <action name="actionAccesStock">
    <property name="text">
     <string>Stock</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionA_propos">
+   <property name="text">
+    <string>A propos</string>
+   </property>
+  </action>
+  <action name="actionAjouter">
+   <property name="text">
+    <string>Inscription</string>
+   </property>
+  </action>
+  <action name="actionRecherche">
+   <property name="text">
+    <string>Recherche</string>
    </property>
   </action>
  </widget>
