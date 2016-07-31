@@ -8,14 +8,15 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 ###  TODO
 - Amélioration BDD
 - Supprimer les incohérence de langage dans le source (Anglais/Français, il faut choisir ...)
-- Accès Admin / Trez / Prez
+- Inscription / Recherche membre
 
 ### DONE
 - Création du README
 - Création de la BDD de gestion de vente.
 - Création du logiciel Client basique pour la vente.
 - Client : Ajout Colonne boutton en fonction du type.
-
+- Accès Stock / Caisse
+- Debug Caisse et Stock
 
 
 
@@ -55,7 +56,7 @@ AND 	date <= '2016-07-22 01:24:30';
 - "stock" : la liste des stocks theorique (idProduit, quantite).
 On calcul la différence de stock lorsque l'ont fait la caisse afin de donner la différence pour le total théorique, ce qui met a jours la table.
 
-- "caisse" : la liste des caisses faites par le trésorier. (idCaisse, date, totalTheorie, totalReel)
+- "caisse" : la liste des caisses faites par le trésorier. (idCaisse, date, totalTheorie, totalReel, erreurStock, erreurCaisse)
 
 totalTheorie = total vente + total erreur stock.
 

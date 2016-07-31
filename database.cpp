@@ -200,3 +200,18 @@ void DataBase::setCaisse(float theorie, float reel)
     q = "INSERT INTO `caisse` (`idCaisse`, `date`, `totalTheorie`, `totalReel`) VALUES (NULL, CURRENT_TIMESTAMP, '" + QString::number(theorie) + "', '" + QString::number(reel) + "');";
     QSqlQuery query(q);
 }
+
+void DataBase::setCaisse(float theorie, float reel, float stock, float caisse)
+{
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::loadVente : Can't open database";
+        return;
+    }
+
+    QString q;
+    q = "INSERT INTO `caisse` (`idCaisse`, `date`, `totalTheorie`, `totalReel`, `erreurStock`, `erreurCaisse`) VALUES (NULL, CURRENT_TIMESTAMP, '" + QString::number(theorie) + "', '" + QString::number(reel) + "', '" + QString::number(stock) + "', '" + QString::number(caisse) + "');";
+    qDebug() << q;
+    QSqlQuery query(q);
+}

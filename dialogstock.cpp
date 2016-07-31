@@ -73,7 +73,7 @@ void DialogStock::on_buttonBox_accepted()
         diffPrix += (listSpin->at(i)->value() - (stock->at(i) + diff->at(i))) * listProduits->at(i).prix;
     }
 
-    QMessageBox::information(this,"Diff","Différence : " + QString::number(diffPrix) + "€");
+    QMessageBox::information(this,"Diff","Différence : " + QString::number(-diffPrix) + "€");
 
     for(i=0;i<listSpin->size();i++)
         db->setStock(listProduits->at(i).idProduit,listSpin->at(i)->value());

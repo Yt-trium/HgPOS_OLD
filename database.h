@@ -30,6 +30,7 @@ public:
 
     void setStock(int id, int q);
     void setCaisse(float theorie, float reel);
+    void setCaisse(float theorie, float reel, float stock, float caisse);
 
 private:
     QSqlDatabase db;

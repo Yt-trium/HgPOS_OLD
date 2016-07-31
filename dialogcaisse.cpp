@@ -81,14 +81,16 @@ float DialogCaisse::getTotalReel()
 void DialogCaisse::updateTotalReel()
 {
     float total = getTotalReel();
+    ui->label_totalTheo->setText(QString::number(theorique + ui->doubleSpinBox_stock->value()));
     ui->label_totalReel->setText(QString::number(total) + "€");
-    ui->label_erreur->setText(QString::number(total + ui->doubleSpinBox_stock->value() - theorique ) + "€");
+    ui->label_erreur->setText(QString::number(total - (theorique + ui->doubleSpinBox_stock->value()) ) + "€");
 }
 
 void DialogCaisse::on_pushButtonValiderCaisse_clicked()
 {
     if(QMessageBox::question(this,"Valider ?","Valider ?",QMessageBox::Yes|QMessageBox::No)  == QMessageBox::Yes)
     {
-        db->setCaisse(theorique,getTotalReel());
+        // db->setCaisse(theorique,getTotalReel());
+        db->setCaisse(theorique,getTotalReel(),ui->doubleSpinBox_stock->value(),(getTotalReel() - (theorique + ui->doubleSpinBox_stock->value()) ));
     }
 }
