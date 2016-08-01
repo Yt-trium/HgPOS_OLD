@@ -9,6 +9,7 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 - Amélioration BDD
 - Supprimer les incohérence de langage dans le source (Anglais/Français, il faut choisir ...)
 - Inscription / Recherche membre
+- Réservations
 
 ### DONE
 - Création du README

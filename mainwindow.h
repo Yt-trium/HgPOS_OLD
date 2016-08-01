@@ -40,6 +40,7 @@ private slots:
     void on_actionAccesCaisse_triggered();
     void on_actionAccesStock_triggered();
     void on_actionA_propos_triggered();
+    void on_actionAnnulation_triggered();
 
 private:
     Ui::MainWindow *ui;

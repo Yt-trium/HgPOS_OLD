@@ -193,3 +193,9 @@ void MainWindow::on_actionA_propos_triggered()
     qDebug() << "on_actionA_propos_triggered";
     QMessageBox::about(this,"HgPOS","HgPOS\nMeyer Cyril\ncyril@adem.u-strasbg.fr");
 }
+
+void MainWindow::on_actionAnnulation_triggered()
+{
+    // Demande d'annulation pour la dernière vente.
+    // db->getLastVenteId()
+}

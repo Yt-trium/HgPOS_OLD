@@ -123,6 +123,7 @@
     </property>
     <addaction name="actionAjouter"/>
     <addaction name="actionRecherche"/>
+    <addaction name="actionReservations"/>
    </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuMembres"/>
@@ -182,6 +183,11 @@
   <action name="actionRecherche">
    <property name="text">
     <string>Recherche</string>
+   </property>
+  </action>
+  <action name="actionReservations">
+   <property name="text">
+    <string>Reservations</string>
    </property>
   </action>
  </widget>
