@@ -32,6 +32,7 @@ private:
 
 private slots:
     void updateTotalReel();
+    void on_buttonBox_accepted();
     void on_pushButtonValiderCaisse_clicked();
 };
 

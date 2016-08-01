@@ -125,7 +125,14 @@
     <addaction name="actionRecherche"/>
     <addaction name="actionReservations"/>
    </widget>
+   <widget class="QMenu" name="menuVentes">
+    <property name="title">
+     <string>Ventes</string>
+    </property>
+    <addaction name="actionAnnulation"/>
+   </widget>
    <addaction name="menuFichier"/>
+   <addaction name="menuVentes"/>
    <addaction name="menuMembres"/>
    <addaction name="menuAide"/>
    <addaction name="menuAcc_s_Restreint"/>
@@ -188,6 +195,11 @@
   <action name="actionReservations">
    <property name="text">
     <string>Reservations</string>
+   </property>
+  </action>
+  <action name="actionAnnulation">
+   <property name="text">
+    <string>Annulation</string>
    </property>
   </action>
  </widget>

@@ -94,3 +94,11 @@ void DialogCaisse::on_pushButtonValiderCaisse_clicked()
         db->setCaisse(theorique,getTotalReel(),ui->doubleSpinBox_stock->value(),(getTotalReel() - (theorique + ui->doubleSpinBox_stock->value()) ));
     }
 }
+
+void DialogCaisse::on_buttonBox_accepted()
+{
+    if(QMessageBox::question(this,"Quitter ?","Êtes vous sur de vouloir quitter sans sauvegarder ?",QMessageBox::Yes|QMessageBox::No)  == QMessageBox::Yes)
+    {
+        this->accept();
+    }
+}
