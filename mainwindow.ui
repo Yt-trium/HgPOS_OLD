@@ -50,7 +50,7 @@
       <item>
        <widget class="QPushButton" name="pushButtonAnnuler">
         <property name="text">
-         <string>Annuler</string>
+         <string>Vider Pannier</string>
         </property>
        </widget>
       </item>
@@ -103,6 +103,7 @@
     <property name="title">
      <string>Fichier</string>
     </property>
+    <addaction name="actionQuitter"/>
    </widget>
    <widget class="QMenu" name="menuAcc_s_Restreint">
     <property name="title">
@@ -199,7 +200,18 @@
   </action>
   <action name="actionAnnulation">
    <property name="text">
-    <string>Annulation</string>
+    <string>Demande Annulation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+A</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
    </property>
   </action>
  </widget>
@@ -207,5 +219,22 @@
  <resources>
   <include location="rsrc.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionQuitter</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

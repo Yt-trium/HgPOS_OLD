@@ -176,7 +176,7 @@ void DataBase::setStock(int id, int q)
     QSqlDatabase db(QSqlDatabase::database());
     if(!db.open())
     {
-        qDebug()<<"DataBase::loadVente : Can't open database";
+        qDebug()<<"DataBase::setStock : Can't open database";
         return;
     }
 
@@ -192,7 +192,7 @@ void DataBase::setCaisse(float theorie, float reel)
     QSqlDatabase db(QSqlDatabase::database());
     if(!db.open())
     {
-        qDebug()<<"DataBase::loadVente : Can't open database";
+        qDebug()<<"DataBase::setCaisse : Can't open database";
         return;
     }
 
@@ -206,7 +206,7 @@ void DataBase::setCaisse(float theorie, float reel, float stock, float caisse)
     QSqlDatabase db(QSqlDatabase::database());
     if(!db.open())
     {
-        qDebug()<<"DataBase::loadVente : Can't open database";
+        qDebug()<<"DataBase::setCaisse : Can't open database";
         return;
     }
 
@@ -214,4 +214,20 @@ void DataBase::setCaisse(float theorie, float reel, float stock, float caisse)
     q = "INSERT INTO `caisse` (`idCaisse`, `date`, `totalTheorie`, `totalReel`, `erreurStock`, `erreurCaisse`) VALUES (NULL, CURRENT_TIMESTAMP, '" + QString::number(theorie) + "', '" + QString::number(reel) + "', '" + QString::number(stock) + "', '" + QString::number(caisse) + "');";
     qDebug() << q;
     QSqlQuery query(q);
+}
+
+int DataBase::getLastVenteId()
+{
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::getLastVenteId : Can't open database";
+        return -1;
+    }
+
+    QString q;
+    q = "SELECT idVente FROM vente ORDER BY idVente DESC LIMIT 1;";
+    QSqlQuery query(q);
+    query.next();
+    return query.value(0).toInt();
 }

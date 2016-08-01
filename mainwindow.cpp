@@ -196,6 +196,18 @@ void MainWindow::on_actionA_propos_triggered()
 
 void MainWindow::on_actionAnnulation_triggered()
 {
+    QString username = QInputDialog::getText(this,"Contact Annulation","Email du responsable de la demande d'annulation");
+    QString reason = QInputDialog::getText(this,"Contact Annulation","Raison de la demande d'annulation",QLineEdit::Normal,"Validation trop rapide");
     // Demande d'annulation pour la dernière vente.
-    // db->getLastVenteId()
+
+    // TODO : Envoie d'email au trésorier pour l'informer ?
+
+    QFile file("cancel.txt");
+    if(file.open(QIODevice::Append))
+    {
+        QTextStream stream(&file);
+        stream << username << " - " << reason << " - IdVente : " << db->getLastVenteId() << "\n";
+    }
+    else
+        QMessageBox::warning(this,"ERROR","Error : Can't write to file");
 }
