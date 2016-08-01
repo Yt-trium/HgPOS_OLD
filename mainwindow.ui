@@ -14,7 +14,7 @@
    <string>HgPOS - Alpha 0.1 - Cyril Meyer</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="rsrc.qrc">
+   <iconset>
     <normaloff>:/icon/hg.png</normaloff>:/icon/hg.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -122,8 +122,8 @@
     <property name="title">
      <string>Membres</string>
     </property>
-    <addaction name="actionAjouter"/>
-    <addaction name="actionRecherche"/>
+    <addaction name="actionAjouterMembre"/>
+    <addaction name="actionRechercheMembre"/>
     <addaction name="actionReservations"/>
    </widget>
    <widget class="QMenu" name="menuVentes">
@@ -183,12 +183,15 @@
     <string>A propos</string>
    </property>
   </action>
-  <action name="actionAjouter">
+  <action name="actionAjouterMembre">
    <property name="text">
     <string>Inscription</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
   </action>
-  <action name="actionRecherche">
+  <action name="actionRechercheMembre">
    <property name="text">
     <string>Recherche</string>
    </property>
@@ -216,9 +219,7 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="rsrc.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>actionQuitter</sender>

@@ -10,6 +10,7 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 - Supprimer les incohérence de langage dans le source (Anglais/Français, il faut choisir ...)
 - Inscription / Recherche membre
 - Réservations
+- Class mieux organisé (QDialog et héritage...)
 
 ### DONE
 - Création du README
@@ -65,3 +66,5 @@ SELECT SUM(prix * unite) FROM produits INNER JOIN vente ON vente.idProduit = pro
 WHERE  date >= (SELECT date FROM caisse ORDER BY idCaisse DESC LIMIT 1)
 
 INSERT INTO `caisse` (`idCaisse`, `date`, `totalTheorie`, `totalReel`) VALUES (NULL, CURRENT_TIMESTAMP, '4.5', '5');
+
+- "membres" : la liste des membres (idMembre, nom, prenom, email, annee) (inconnu = 0, L1 = 1, L2MATH = 20, L2INFO = 21, L3MATH = 30, L3INFO = 31, ... M2INFO = 51, Autre = 100)

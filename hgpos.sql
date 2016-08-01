@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 31 Juillet 2016 à 01:13
+-- Généré le :  Lun 01 Août 2016 à 23:52
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -47,7 +47,30 @@ INSERT INTO `caisse` (`idCaisse`, `date`, `totalTheorie`, `totalReel`, `erreurSt
 (6, '2016-07-30 00:01:34', 1.7, 1.7, 0, 0),
 (7, '2016-07-31 00:58:57', 10.5, 10.6, 0, 0),
 (8, '2016-07-31 01:02:04', 0, 0, 0, 0),
-(9, '2016-07-31 01:09:56', 10, 15, 4, 1);
+(9, '2016-07-31 01:09:56', 10, 15, 4, 1),
+(10, '2016-08-01 19:41:58', 11.5, 13, 1.2, 0.3);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `membres`
+--
+
+CREATE TABLE `membres` (
+  `idMembre` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `annee` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `membres`
+--
+
+INSERT INTO `membres` (`idMembre`, `nom`, `prenom`, `email`, `annee`) VALUES
+(3, 'M', 'Cyril', 'cyril@m.m', 31),
+(4, 'ab', 'bc', 'de', 100);
 
 -- --------------------------------------------------------
 
@@ -96,14 +119,14 @@ CREATE TABLE `stock` (
 
 INSERT INTO `stock` (`idProduit`, `quantite`) VALUES
 (1, 28),
-(2, 32),
+(2, 31),
 (3, 43),
 (4, 44),
 (5, 44),
 (6, 46),
-(7, 42),
+(7, 40),
 (8, 48),
-(9, 49),
+(9, 47),
 (10, 49);
 
 -- --------------------------------------------------------
@@ -161,7 +184,14 @@ INSERT INTO `vente` (`idVente`, `idProduit`, `date`, `unite`) VALUES
 (35, 7, '2016-07-28 14:53:18', 1),
 (36, 2, '2016-07-29 23:59:22', 1),
 (37, 7, '2016-07-29 23:59:22', 2),
-(38, 2, '2016-07-31 00:58:06', 1);
+(38, 2, '2016-07-31 00:58:06', 1),
+(39, 9, '2016-08-01 19:35:36', 2),
+(40, 2, '2016-08-01 19:35:36', 1),
+(41, 3, '2016-08-01 19:44:51', 1),
+(42, 1, '2016-08-01 19:44:51', 1),
+(43, 9, '2016-08-01 19:44:51', 1),
+(44, 6, '2016-08-01 19:44:51', 1),
+(45, 10, '2016-08-01 22:54:20', 1);
 
 --
 -- Index pour les tables exportées
@@ -172,6 +202,12 @@ INSERT INTO `vente` (`idVente`, `idProduit`, `date`, `unite`) VALUES
 --
 ALTER TABLE `caisse`
   ADD PRIMARY KEY (`idCaisse`);
+
+--
+-- Index pour la table `membres`
+--
+ALTER TABLE `membres`
+  ADD PRIMARY KEY (`idMembre`);
 
 --
 -- Index pour la table `produits`
@@ -199,7 +235,12 @@ ALTER TABLE `vente`
 -- AUTO_INCREMENT pour la table `caisse`
 --
 ALTER TABLE `caisse`
-  MODIFY `idCaisse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idCaisse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT pour la table `membres`
+--
+ALTER TABLE `membres`
+  MODIFY `idMembre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `produits`
 --
@@ -209,7 +250,7 @@ ALTER TABLE `produits`
 -- AUTO_INCREMENT pour la table `vente`
 --
 ALTER TABLE `vente`
-  MODIFY `idVente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `idVente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

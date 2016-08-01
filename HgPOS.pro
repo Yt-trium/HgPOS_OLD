@@ -16,18 +16,21 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     database.cpp \
     dialogstock.cpp \
-    dialogcaisse.cpp
+    dialogcaisse.cpp \
+    dialoginscription.cpp
 
 HEADERS  += mainwindow.h \
     database.h \
     produit.h \
     dialogstock.h \
     struct.h \
-    dialogcaisse.h
+    dialogcaisse.h \
+    dialoginscription.h
 
 FORMS    += mainwindow.ui \
     dialogstock.ui \
-    dialogcaisse.ui
+    dialogcaisse.ui \
+    dialoginscription.ui
 
 DISTFILES += \
     README.md

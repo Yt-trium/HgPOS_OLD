@@ -34,6 +34,8 @@ public:
     void setCaisse(float theorie, float reel);
     void setCaisse(float theorie, float reel, float stock, float caisse);
 
+    void addMembre(QString nom, QString prenom, QString email, int annee);
+
 private:
     QSqlDatabase db;
 };

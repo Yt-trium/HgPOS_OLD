@@ -231,3 +231,17 @@ int DataBase::getLastVenteId()
     query.next();
     return query.value(0).toInt();
 }
+
+void DataBase::addMembre(QString nom, QString prenom, QString email, int annee)
+{
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::addMembre : Can't open database";
+        return;
+    }
+
+    QString q;
+    q = "INSERT INTO `membres` (`idMembre`, `nom`, `prenom`, `email`, `annee`) VALUES (NULL, '" + nom + "', '" + prenom + "', '" + email + "', '" + QString::number(annee) + "');";
+    QSqlQuery query(q);
+}

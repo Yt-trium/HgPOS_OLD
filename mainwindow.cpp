@@ -211,3 +211,10 @@ void MainWindow::on_actionAnnulation_triggered()
     else
         QMessageBox::warning(this,"ERROR","Error : Can't write to file");
 }
+
+void MainWindow::on_actionAjouterMembre_triggered()
+{
+    DialogInscription d;
+    d.setDataBase(db);
+    d.exec();
+}

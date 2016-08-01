@@ -7,6 +7,7 @@
 
 #include "dialogstock.h"
 #include "dialogcaisse.h"
+#include "dialoginscription.h"
 
 #include "database.h"
 
@@ -41,6 +42,7 @@ private slots:
     void on_actionAccesStock_triggered();
     void on_actionA_propos_triggered();
     void on_actionAnnulation_triggered();
+    void on_actionAjouterMembre_triggered();
 
 private:
     Ui::MainWindow *ui;
