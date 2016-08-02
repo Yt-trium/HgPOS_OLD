@@ -258,7 +258,6 @@ QString DataBase::searchMembre(QString nom, QString prenom)
     QString r = "";
     QString q;
     q = "SELECT * FROM membres WHERE nom = '" + nom + "' AND prenom = '" + prenom + "';";
-    qDebug() << q;
     QSqlQuery query(q);
 
     while(query.next())

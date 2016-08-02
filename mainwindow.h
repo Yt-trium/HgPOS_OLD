@@ -44,6 +44,7 @@ private slots:
     void on_actionAnnulation_triggered();
     void on_actionAjouterMembre_triggered();
     void on_actionRechercheMembre_triggered();
+    void on_actionValiderVente_triggered();
 
 private:
     Ui::MainWindow *ui;

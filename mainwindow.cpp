@@ -225,3 +225,8 @@ void MainWindow::on_actionRechercheMembre_triggered()
     QString nom = QInputDialog::getText(this,"Recherche de membre","Nom : ");
     QMessageBox::information(this,"Recherche de membre",db->searchMembre(nom,prenom));
 }
+
+void MainWindow::on_actionValiderVente_triggered()
+{
+    this->on_pushButtonValider_clicked();
+}
