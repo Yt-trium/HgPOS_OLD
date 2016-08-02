@@ -218,3 +218,10 @@ void MainWindow::on_actionAjouterMembre_triggered()
     d.setDataBase(db);
     d.exec();
 }
+
+void MainWindow::on_actionRechercheMembre_triggered()
+{
+    QString prenom = QInputDialog::getText(this,"Recherche de membre","Prenom : ");
+    QString nom = QInputDialog::getText(this,"Recherche de membre","Nom : ");
+    QMessageBox::information(this,"Recherche de membre",db->searchMembre(nom,prenom));
+}

@@ -245,3 +245,35 @@ void DataBase::addMembre(QString nom, QString prenom, QString email, int annee)
     q = "INSERT INTO `membres` (`idMembre`, `nom`, `prenom`, `email`, `annee`) VALUES (NULL, '" + nom + "', '" + prenom + "', '" + email + "', '" + QString::number(annee) + "');";
     QSqlQuery query(q);
 }
+
+QString DataBase::searchMembre(QString nom, QString prenom)
+{
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::searchMembre : Can't open database";
+        return "Can't open database";
+    }
+
+    QString r = "";
+    QString q;
+    q = "SELECT * FROM membres WHERE nom = '" + nom + "' AND prenom = '" + prenom + "';";
+    qDebug() << q;
+    QSqlQuery query(q);
+
+    while(query.next())
+        {
+            r += "ID : ";
+            r += query.value(0).toString();
+            r += " - ";
+            r += "Email : ";
+            r += query.value(3).toString();
+            r += " - ";
+            r += "Annee : ";
+            r += query.value(4).toString();
+            r += "\n";
+        }
+    if (r == "")
+            r = "Membre introuvable";
+    return r;
+}

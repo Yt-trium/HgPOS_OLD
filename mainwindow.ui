@@ -14,7 +14,7 @@
    <string>HgPOS - Alpha 0.1 - Cyril Meyer</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="rsrc.qrc">
     <normaloff>:/icon/hg.png</normaloff>:/icon/hg.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -195,6 +195,9 @@
    <property name="text">
     <string>Recherche</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
   </action>
   <action name="actionReservations">
    <property name="text">
@@ -219,7 +222,9 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="rsrc.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>actionQuitter</sender>

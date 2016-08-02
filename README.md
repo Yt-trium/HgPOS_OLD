@@ -8,9 +8,15 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 ###  TODO
 - Amélioration BDD
 - Supprimer les incohérence de langage dans le source (Anglais/Français, il faut choisir ...)
-- Inscription / Recherche membre
 - Réservations
 - Class mieux organisé (QDialog et héritage...)
+- ReRédaction du README
+- Création d'une DOC
+- Réagement du code (nettoyage)
+
+### IDEA
+- Recherche membre avec lecteur code bar
+- Solde de compte pour les membres
 
 ### DONE
 - Création du README
@@ -19,6 +25,7 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 - Client : Ajout Colonne boutton en fonction du type.
 - Accès Stock / Caisse
 - Debug Caisse et Stock
+- Inscription / Recherche membre
 
 
 

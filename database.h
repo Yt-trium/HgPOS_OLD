@@ -36,6 +36,8 @@ public:
 
     void addMembre(QString nom, QString prenom, QString email, int annee);
 
+    QString searchMembre(QString nom, QString prenom);
+
 private:
     QSqlDatabase db;
 };
