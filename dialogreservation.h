@@ -18,6 +18,11 @@ public:
 
 private:
     Ui::DialogReservation *ui;
+    QString date;
+    QSettings *iniFile;
+
+private slots:
+    void on_buttonBox_accepted();
 };
 
 #endif // DIALOGRESERVATION_H

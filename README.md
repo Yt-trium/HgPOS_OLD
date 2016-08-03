@@ -8,7 +8,6 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 ###  TODO
 - Amélioration BDD
 - Supprimer les incohérence de langage dans le source (Anglais/Français, il faut choisir ...)
-- Réservations
 - Class mieux organisé (QDialog et héritage...)
 - ReRédaction du README
 - Création d'une DOC
@@ -26,18 +25,53 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 - Accès Stock / Caisse
 - Debug Caisse et Stock
 - Inscription / Recherche membre
+- Réservations
 
 
 
 
 ## VERSION AND REVISION
-### VERSION ACTUEL : ALPHA 1
-
-
+### VERSION ACTUEL : ALPHA 2
 
 
 
 ## Dev Section
+
+## Reservation
+Les reservations sont stockés dans un fichier nommé reservation.ini.
+Format :
+
+[default]
+list=
+[date]
+list=
+
+Exemple :
+
+[default]
+emmental_1=
+emmental_2=
+poulet%20curry_1=
+poulet%20curry_2=
+poulet%20curry_3=
+saumon%20frommage%20frais_1=
+
+[03-08-2016]
+emmental_1=
+emmental_2=Cyril
+poulet%20curry_1=VENDU
+poulet%20curry_2=Jimmy
+poulet%20curry_3=
+saumon%20frommage%20frais_1=Julien
+
+[04-08-2016]
+emmental_1=
+emmental_2=
+poulet%20curry_1=Bastien
+poulet%20curry_2=Mathilde
+poulet%20curry_3=
+saumon%20frommage%20frais_1=
+
 
 ## Database
 
