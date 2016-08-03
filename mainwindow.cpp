@@ -230,3 +230,9 @@ void MainWindow::on_actionValiderVente_triggered()
 {
     this->on_pushButtonValider_clicked();
 }
+
+void MainWindow::on_actionReservations_triggered()
+{
+    DialogReservation d;
+    d.exec();
+}

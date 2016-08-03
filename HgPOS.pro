@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     database.cpp \
     dialogstock.cpp \
     dialogcaisse.cpp \
-    dialoginscription.cpp
+    dialoginscription.cpp \
+    dialogreservation.cpp
 
 HEADERS  += mainwindow.h \
     database.h \
@@ -25,12 +26,14 @@ HEADERS  += mainwindow.h \
     dialogstock.h \
     struct.h \
     dialogcaisse.h \
-    dialoginscription.h
+    dialoginscription.h \
+    dialogreservation.h
 
 FORMS    += mainwindow.ui \
     dialogstock.ui \
     dialogcaisse.ui \
-    dialoginscription.ui
+    dialoginscription.ui \
+    dialogreservation.ui
 
 DISTFILES += \
     README.md

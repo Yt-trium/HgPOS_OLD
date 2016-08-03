@@ -200,12 +200,15 @@
     <string>Recherche</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+R</string>
+    <string>Ctrl+F</string>
    </property>
   </action>
   <action name="actionReservations">
    <property name="text">
     <string>Reservations</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="actionAnnulation">
