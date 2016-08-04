@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>HgPOS - Alpha 0.1 - Cyril Meyer</string>
+   <string>HgPOS - Alpha 0.2 - Cyril Meyer</string>
   </property>
   <property name="windowIcon">
    <iconset resource="rsrc.qrc">

@@ -232,6 +232,42 @@ int DataBase::getLastVenteId()
     return query.value(0).toInt();
 }
 
+int DataBase::getDroitAcces()
+{
+    bool validReturn;
+    QString login = QInputDialog::getText(0, QObject::tr("Login"),
+                                             QObject::tr("Login :"), QLineEdit::Normal,
+                                             "", &validReturn);
+    if (!validReturn || login.isEmpty())
+    {
+        qDebug() << "DataBase::getDroitAcces : Error with login";
+        return false;
+    }
+
+    QString password = QInputDialog::getText(0, QObject::tr("Password"),
+                                             QObject::tr("Password :"), QLineEdit::Normal,
+                                             "", &validReturn);
+    if (!validReturn || password.isEmpty())
+    {
+        qDebug() << "DataBase::getDroitAcces : Error with tresorier";
+        return false;
+    }
+
+
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::getLastVenteId : Can't open database";
+        return -1;
+    }
+
+    QString q;
+    q = "SELECT droitAcces FROM utilisateurs WHERE login = '" + login + "' AND password = '" + password + "';";
+    QSqlQuery query(q);
+    query.next();
+    return query.value(0).toInt();
+}
+
 void DataBase::addMembre(QString nom, QString prenom, QString email, int annee)
 {
     QSqlDatabase db(QSqlDatabase::database());

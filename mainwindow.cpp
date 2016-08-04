@@ -174,6 +174,8 @@ void MainWindow::on_listWidgetVente_itemDoubleClicked()
 
 void MainWindow::on_actionAccesCaisse_triggered()
 {
+    if(db->getDroitAcces() < 10)
+            return;
     qDebug() << "on_actionAccesCaisse_triggered";
     DialogCaisse d;
     d.setDataBase(db);
@@ -182,6 +184,8 @@ void MainWindow::on_actionAccesCaisse_triggered()
 
 void MainWindow::on_actionAccesStock_triggered()
 {
+    if(db->getDroitAcces() < 5)
+            return;
     qDebug() << "on_actionAccesStock_triggered";
     DialogStock d;
     d.setDataBase(db);

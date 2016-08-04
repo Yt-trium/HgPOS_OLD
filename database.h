@@ -29,6 +29,7 @@ public:
     QList<Ventes>* loadVente();
 
     int getLastVenteId();
+    int getDroitAcces();
 
     void setStock(int id, int q);
     void setCaisse(float theorie, float reel);

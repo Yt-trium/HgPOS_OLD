@@ -26,7 +26,7 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 - Debug Caisse et Stock
 - Inscription / Recherche membre
 - Réservations
-
+- Sécurité Accès restreint
 
 
 
@@ -109,3 +109,5 @@ WHERE  date >= (SELECT date FROM caisse ORDER BY idCaisse DESC LIMIT 1)
 INSERT INTO `caisse` (`idCaisse`, `date`, `totalTheorie`, `totalReel`) VALUES (NULL, CURRENT_TIMESTAMP, '4.5', '5');
 
 - "membres" : la liste des membres (idMembre, nom, prenom, email, annee) (inconnu = 0, L1 = 1, L2MATH = 20, L2INFO = 21, L3MATH = 30, L3INFO = 31, ... M2INFO = 51, Autre = 100)
+
+- "utilisateurs" : la liste des utilisateurs (idUtilisateurs, login, password, droitAcces) (droit acces : stock = 5, tresorier = 10, president = 20, root = 42)
