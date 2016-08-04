@@ -91,7 +91,7 @@ void DialogCaisse::on_pushButtonValiderCaisse_clicked()
     if(QMessageBox::question(this,"Valider ?","Valider ?",QMessageBox::Yes|QMessageBox::No)  == QMessageBox::Yes)
     {
         // db->setCaisse(theorique,getTotalReel());
-        db->setCaisse(theorique,getTotalReel(),ui->doubleSpinBox_stock->value(),(getTotalReel() - (theorique + ui->doubleSpinBox_stock->value()) ));
+        db->setCaisse(theorique,getTotalReel(),ui->doubleSpinBox_stock->value(),(getTotalReel() - (theorique + ui->doubleSpinBox_stock->value())));
     }
 }
 

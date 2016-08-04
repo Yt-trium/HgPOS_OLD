@@ -11,6 +11,7 @@
 #include "dialogreservation.h"
 
 #include "database.h"
+#include "hgexporter.h"
 
 namespace Ui {
 class MainWindow;

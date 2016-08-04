@@ -2,6 +2,8 @@
 #define DIALOGCAISSE_H
 
 #include <QDialog>
+#include <QtWidgets>
+#include <QtGui>
 #include <QInputDialog>
 #include <QMessageBox>
 

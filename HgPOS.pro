@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     dialogstock.cpp \
     dialogcaisse.cpp \
     dialoginscription.cpp \
-    dialogreservation.cpp
+    dialogreservation.cpp \
+    hgexporter.cpp
 
 HEADERS  += mainwindow.h \
     database.h \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     struct.h \
     dialogcaisse.h \
     dialoginscription.h \
-    dialogreservation.h
+    dialogreservation.h \
+    hgexporter.h
 
 FORMS    += mainwindow.ui \
     dialogstock.ui \
