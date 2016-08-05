@@ -174,8 +174,6 @@ void MainWindow::on_listWidgetVente_itemDoubleClicked()
 
 void MainWindow::on_actionAccesCaisse_triggered()
 {
-    HgExporter::pdfCaisse();    // TEST
-
     if(db->getDroitAcces() < 10)
             return;
     qDebug() << "on_actionAccesCaisse_triggered";

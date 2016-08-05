@@ -8,6 +8,7 @@
 #include <QMessageBox>
 
 #include "database.h"
+#include "hgexporter.h"
 
 namespace Ui {
 class DialogCaisse;
