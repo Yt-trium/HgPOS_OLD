@@ -5,6 +5,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    HgExporter::pdfCaisse(0,0,0,0);
+
     ui->setupUi(this);
 
     listProduits = db->loadProduits();

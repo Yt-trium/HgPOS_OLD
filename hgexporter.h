@@ -3,6 +3,7 @@
 
 #include <QtWidgets>
 #include <QtGui>
+#include <QPrinter>
 
 class HgExporter
 {
