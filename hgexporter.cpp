@@ -31,6 +31,9 @@ int HgExporter::pdfCaisse(float theorie, float reel, float stock, float caisse)
     painter.end();
     */
 
+    // QTextDocumentWriter ?
+    // QTextDocumentWriter test;
+
     QString html =
     "<div align=right>"
        "ADEM<br>"
