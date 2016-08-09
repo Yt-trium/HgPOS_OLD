@@ -17,6 +17,7 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 ### IDEA
 - Recherche membre avec lecteur code bar
 - Solde de compte pour les membres
+- compte administration ajout produits
 
 ### DONE
 - Création du README
