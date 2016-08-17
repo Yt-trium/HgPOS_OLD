@@ -6,7 +6,7 @@ Hg POS est un logiciel de gestion d'un point de vente associatif.
 Hg POS permet de gérer la vente, les stocks, les inscriptions...
 
 ###  TODO
-- Exportation des caisse et stock.
+- Exportation des caisse et stock (En cours).
 - Amélioration BDD
 - Supprimer les incohérence de langage dans le source (Anglais/Français, il faut choisir ...)
 - Class mieux organisé (QDialog et héritage...)
@@ -17,6 +17,7 @@ Hg POS permet de gérer la vente, les stocks, les inscriptions...
 ### IDEA
 - Recherche membre avec lecteur code bar
 - Solde de compte pour les membres
+- compte administration ajout produits
 
 ### DONE
 - Création du README
