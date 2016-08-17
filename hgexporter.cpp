@@ -7,6 +7,18 @@ HgExporter::HgExporter()
 
 int HgExporter::pdfCaisse(float theorie, float reel, float stock, float caisse)
 {
+
+    QFile model("model_tex/caisse.tex");
+    QString filename = "caisse-" + QDateTime::currentDateTime().toString("yyyy-MM-dd-hh-mm-ss") + ".tex";
+    model.copy(filename);
+    QFile file(filename);
+
+    QProcess process;
+    process.setNativeArguments(filename);
+    process.start("pdflatex");
+    process.waitForFinished(10000);
+
+
     /*
      * OLD VERSION USING QPdfWriter / Maybe usefull later if the second version isn't perfect.
      *
@@ -33,7 +45,7 @@ int HgExporter::pdfCaisse(float theorie, float reel, float stock, float caisse)
 
     // QTextDocumentWriter ?
     // QTextDocumentWriter test;
-
+    /*
     QString html =
     "<div align=right>"
        "ADEM<br>"
@@ -85,6 +97,7 @@ int HgExporter::pdfCaisse(float theorie, float reel, float stock, float caisse)
     printer.setPageMargins(QMarginsF(15, 15, 15, 15));
 
     document.print(&printer);
+    */
 
     return 0;
 }
