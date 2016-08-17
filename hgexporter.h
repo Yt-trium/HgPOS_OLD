@@ -9,7 +9,7 @@ class HgExporter
 {
 public:
     HgExporter();
-    static int pdfCaisse(float theorie, float reel, float stock, float caisse);
+    static int pdfCaisse(QDate datedebut, QDate datefin);
 };
 
 #endif // HGEXPORTER_H
