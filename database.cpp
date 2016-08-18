@@ -312,3 +312,20 @@ QString DataBase::searchMembre(QString nom, QString prenom)
             r = "Membre introuvable";
     return r;
 }
+
+QDate DataBase::getLastCaisseDate()
+{
+    QSqlDatabase db(QSqlDatabase::database());
+    if(!db.open())
+    {
+        qDebug()<<"DataBase::getLastCaisseDate : Can't open database";
+        return QDate::currentDate();
+    }
+
+    QString q;
+    q = "SELECT date FROM caisse ORDER BY idCaisse DESC LIMIT 1;";
+    QSqlQuery query(q);
+    query.next();
+    return query.value(0).toDate();
+
+}

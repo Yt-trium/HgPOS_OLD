@@ -84,7 +84,7 @@ saumon%20frommage%20frais_1=
 
 ### Database Structure
 - "produits" : la liste des articles en vente (idProduit, nom, type, prix, img(link))
-types : (snacks = 1, boissons = 2, sandwichs = 100, inscriptions = 200, remise = 250, hide = 254, default = 255)
+types : (snacks = 1, boissons = 2, impressions = 5, goodies adem = 6, goodies pi = 7, sandwichs = 100, inscriptions = 200, remise = 250, hide = 254, default = 255)
 
 > Une formule, c'est < snack + boisson + sandwichs + remise >.
 

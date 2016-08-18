@@ -5,8 +5,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    HgExporter::pdfCaisse(QDate::currentDate(),QDate::currentDate());
-
     ui->setupUi(this);
 
     listProduits = db->loadProduits();

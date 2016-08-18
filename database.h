@@ -10,6 +10,8 @@
 
 #include <QDebug>
 
+#include <QDate>
+
 #include "produit.h"
 #include "struct.h"
 
@@ -30,6 +32,7 @@ public:
 
     int getLastVenteId();
     int getDroitAcces();
+    QDate getLastCaisseDate();
 
     void setStock(int id, int q);
     void setCaisse(float theorie, float reel);
