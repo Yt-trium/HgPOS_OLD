@@ -103,7 +103,8 @@ int HgExporter::pdfCaisse(QDate datedebut, QDate datefin,
     file.close();
 
     QProcess process;
-    process.setNativeArguments(filename);
+    process.setArguments(filename);
+    // process.setNativeArguments(filename);
     process.start("pdflatex");
     if(process.waitForFinished(5000))
     {

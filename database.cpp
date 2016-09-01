@@ -78,13 +78,14 @@ bool DataBase::checkTableProduitsNotEmpty()
 QList<Produit>* DataBase::loadProduits()
 {
     QSqlDatabase db(QSqlDatabase::database());
+
+    QList<Produit> *listProduits = new QList<Produit>();
+
     if(!db.open())
     {
         qDebug()<<"DataBase::loadProduits : Can't open database";
-        return false;
+        return listProduits;
     }
-
-    QList<Produit> *listProduits = new QList<Produit>();
 
     Produit p;
     QString q = "SELECT * FROM produits";
@@ -122,13 +123,14 @@ bool DataBase::sellProduit(int id, int unit)
 QList<int>* DataBase::loadStock()
 {
     QSqlDatabase db(QSqlDatabase::database());
+
+    QList<int> *stock = new QList<int>();
+
     if(!db.open())
     {
         qDebug()<<"DataBase::loadStock : Can't open database";
-        return false;
+        return stock;
     }
-
-    QList<int> *stock = new QList<int>();
 
     int x;
     QString q = "SELECT * FROM stock";
@@ -148,13 +150,14 @@ QList<Ventes>* DataBase::loadVente()
 {
 
     QSqlDatabase db(QSqlDatabase::database());
+
+    QList<Ventes> *ventes = new QList<Ventes>();
+
     if(!db.open())
     {
         qDebug()<<"DataBase::loadVente : Can't open database";
-        return false;
+        return ventes;
     }
-
-    QList<Ventes> *ventes = new QList<Ventes>();
 
     Ventes v;
     QString q = "SELECT idProduit, unite FROM vente WHERE  date >= (SELECT date FROM caisse ORDER BY idCaisse DESC LIMIT 1)";
