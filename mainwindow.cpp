@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
         if(listProduits->at(i).img != "")
         {
             tmpBtn->setIcon(QIcon("./logoProduits/" + listProduits->at(i).img));
-            tmpBtn->setIconSize(QSize(50,50));
+            tmpBtn->setIconSize(QSize(25,25));
         }
 
         listBtn->append(tmpBtn);

@@ -6,20 +6,19 @@ DialogStock::DialogStock(QWidget *parent) :
     ui(new Ui::DialogStock)
 {
     ui->setupUi(this);
-
     /*
      * Lister les produits
      * Recuperer les stocks
      * Calculer le theorique
      *
      */
-
     listProduits = db->loadProduits();
     // TODO : Changer la structure de donné pour stock.
     stock = db->loadStock();
     ventes = db->loadVente();
     diff = new QList<int>();
     int i;
+    int j = 0;
 
     for(i=0;i<listProduits->size();i++)
         diff->append(0);
@@ -41,15 +40,23 @@ DialogStock::DialogStock(QWidget *parent) :
         QLabel *tmpLbl4 = new QLabel(QString::number(stock->at(i) + diff->at(i)));
 
         QSpinBox *tmpSpin = new QSpinBox(this);
+        tmpSpin->setMaximum(1000);
         tmpSpin->setValue(stock->at(i) + diff->at(i));
 
-        ui->gridLayoutStock->addWidget(tmpLbl1,i+1,0);
-        ui->gridLayoutStock->addWidget(tmpLbl2,i+1,1);
-        ui->gridLayoutStock->addWidget(tmpLbl3,i+1,2);
-        ui->gridLayoutStock->addWidget(tmpLbl4,i+1,3);
-        ui->gridLayoutStock->addWidget(tmpSpin,i+1,4);
+        if((i+1)%16 == 0)
+        {
+            j++;
+        }
+
+        ui->gridLayoutStock->addWidget(tmpLbl1,i+1-16*j,0+5*j);
+        ui->gridLayoutStock->addWidget(tmpLbl2,i+1-16*j,1+5*j);
+        ui->gridLayoutStock->addWidget(tmpLbl3,i+1-16*j,2+5*j);
+        ui->gridLayoutStock->addWidget(tmpLbl4,i+1-16*j,3+5*j);
+        ui->gridLayoutStock->addWidget(tmpSpin,i+1-16*j,4+5*j);
+
         listSpin->append(tmpSpin);
     }
+
 }
 
 DialogStock::~DialogStock()

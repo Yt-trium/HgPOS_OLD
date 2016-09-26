@@ -9,6 +9,7 @@
 #include <QInputDialog>
 
 #include <QDebug>
+#include <QSqlError>
 
 #include <QDate>
 

@@ -18,6 +18,7 @@ int DataBase::connect(QString hostName, QString dbName, QString userName, QStrin
 
     // Connect to database
     db = QSqlDatabase::addDatabase("QMYSQL");
+    // db = QSqlDatabase::addDatabase("QSQLITE");
     db.setHostName(hostName);
     db.setDatabaseName(dbName);
     db.setUserName(userName);
@@ -26,7 +27,8 @@ int DataBase::connect(QString hostName, QString dbName, QString userName, QStrin
     // Check connexion
     if(!db.open())
     {
-        qDebug()<<"DataBase::connect : Can't connect to database";
+        qDebug() << db.lastError().text();
+        qDebug() <<"DataBase::connect : Can't connect to database";
         return 2;
     }
 
@@ -61,7 +63,7 @@ bool DataBase::connect_dialog()
         return false;
     }
 
-   if(this->connect("localhost","hgpos",db_username,db_password) == 0)
+   if(this->connect("localhost","HgPOS",db_username,db_password) == 0)
        return true;
    else
        return false;
@@ -296,11 +298,15 @@ QString DataBase::searchMembre(QString nom, QString prenom)
 
     QString r = "";
     QString q;
-    q = "SELECT * FROM membres WHERE nom = '" + nom + "' AND prenom = '" + prenom + "';";
+    q = "SELECT * FROM membres WHERE nom = '" + nom + "' OR prenom = '" + prenom + "';";
     QSqlQuery query(q);
 
     while(query.next())
         {
+            r += query.value(1).toString();
+            r += " ";
+            r += query.value(2).toString();
+            r += " ";
             r += "ID : ";
             r += query.value(0).toString();
             r += " - ";
