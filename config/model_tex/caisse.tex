@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{eurosym}
+\usepackage[utf8]{inputenc}
+
+\title{Caisse du *DATE-DEBUT* au *DATE-FIN*}
+\author{HgPOS - Cyril Meyer - cyril@adem.u-strasbg.fr}
+\date{*DATE-HEURE*}
+
+\begin{document}
+
+\maketitle
+
+\section{Details Comptage}
+\centering
+
+\begin{tabular}{|l|r|r||l|r|r|}
+  \hline
+  Quantite & Valeur & Total & Quantite & Valeur & Total \\
+  \hline
+  *2e* & 2\euro & *TOTAL-2e*\euro 		& *500e* & 500\euro & *TOTAL-500e*\euro \\
+  \hline
+  *1e* & 1\euro & *TOTAL-1e*\euro 		& *200e* & 200\euro & *TOTAL-200e*\euro \\
+  \hline
+  *05e* & 0.50\euro & *TOTAL-05e*\euro 	& *100e* & 100\euro & *TOTAL-100e*\euro \\
+  \hline
+  *02e* & 0.20\euro & *TOTAL-02e*\euro 	& *50e* & 50\euro & *TOTAL-50e*\euro \\
+  \hline
+  *01e* & 0.10\euro & *TOTAL-01e*\euro 	& *20e* & 20\euro & *TOTAL-20e*\euro \\
+  \hline
+  *005e* & 0.05\euro & *TOTAL-005e*\euro 	& *10e* & 10\euro & *TOTAL-10e*\euro \\
+  \hline
+  *002e* & 0.02\euro & *TOTAL-002e*\euro 	& *5e* & 5\euro & *TOTAL-5e*\euro \\
+  \hline
+  *001e* & 0.01\euro & *TOTAL-001e*\euro 	&  &  &  \\
+  \hline
+\end{tabular}
+\raggedright
+\linebreak
+Fond de Caisse a l'ouverture : *FOND-CAISSE*\euro \\
+Total Especes : *TOTAL-ESP*\euro \\
+
+\section{Details Theorique}
+
+\begin{tabular}{|l|c|c|c|c|c|c|}
+  \hline
+  Type & Snacks & Boissons & Sandwichs  & Remise & Inscriptions \\
+  \hline
+  Valeur & *DET-1*\euro  & *DET-2*\euro  & *DET-100*\euro  & *DET-250*\euro & *DET-200*\euro \\
+  \hline
+  Type & Impressions & Goodies Adem & Goodies Pi  & Autres & Total \\
+  \hline
+  Valeur & *DET-5*\euro  & *DET-6*\euro  & *DET-7*\euro   & *DET-X*\euro  & *TOTAL-THQ*\euro   \\
+  \hline
+\end{tabular}
+
+\section{Bilan}
+\begin{tabular}{|l|r|}
+\hline
+Total Especes :& *TOTAL-ESP*\euro \\
+\hline
+Total Theorique :& *TOTAL-THQ*\euro \\
+\hline
+Fond Caisse a l'ouverture :& *FOND-CAISSE*\euro \\
+\hline
+Total Recettes :& *TOTAL-REC*\euro\\
+(depose en coffre : (Total Especes  - Fond Caisse) & \\
+\hline
+Erreur de Stock :& *TOTAL-ERR-STOCK*\euro\\
+\hline
+Erreur :& *TOTAL-ERR*\euro\\
+\hline
+\end{tabular}
+
+
+\vfill
+\raggedleft
+Signature\hspace{0.5cm} \makebox[1.5in]{\hrulefill}
+\clearpage
+
+\end{document}
